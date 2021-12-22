@@ -19,6 +19,7 @@ export class NewsItem extends Component {
                         <p className="card-text"><small className="text-primary"> {new Date(publishedAt).toGMTString()}</small></p>
                         <a href={url} target="_blank"  className="btn btn-primary btn-sm">Read More 💨</a>
                     </div>
+                    
                 </div>
             </>
         )
