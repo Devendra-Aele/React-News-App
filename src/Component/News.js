@@ -88,14 +88,14 @@ export class News extends Component {
         return (
             <>
                 <div className="container ">
-                    <h1 className="text-center mt-2 mb-5" > Top  {this.capitalise(this.props.category)} News 🐱</h1>
+                    <h1 className="text-center" style={{margin:"60px 0px"}} > Top  {this.capitalise(this.props.category)} News 🐱</h1>
                     {this.state.loding && <Sppiner />}
                     <InfiniteScroll
                         dataLength={this.state.articles.length}
                         next={this.load}
                         hasMore={this.state.articles.length != this.state.totalResults}
                         loader={<Sppiner />}>
-                        <div className="container py-4 ">
+                        <div className="container py-3 ">
                             <div className="row">
                                 {
                                     this.state.articles.map((e) => {
