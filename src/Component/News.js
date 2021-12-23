@@ -31,15 +31,19 @@ export class News extends Component {
     }
 
     async updateNews() {
+        this.props.setprogress(10);
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=a07a6c87bbe34de7860bc9a650d54cd5&page=${this.state.page}&pageSize=${this.props.pagesize}`
         this.setState({ loding: true })
         let data = await fetch(url);
+        // this.props.setprogress(50);
         let parshData = await data.json();
+        // this.props.setprogress(70);
         this.setState({
             articles: parshData.articles,
             totalResults: parshData.totalResults,
             loding: false
         })
+        this.props.setprogress(100);
     }
 
     capitalise = (s) => {
