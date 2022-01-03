@@ -12,10 +12,10 @@ const [articles,setarticles]=useState([]);
 const [loding,setloding]=useState(true);
 const [page,setpage]=useState(1);
 const [totalResults,settotalResults]=useState(0);
-// document.title = `${this.capitalise(props.category)}-World Wide News`
 
 
-    const updateNews=async()=> {
+const updateNews=async()=> {
+        document.title = `${capitalise(props.category)}-World Wide News`
         props.setprogress(10)
         let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=7ae21ed023164911b60a0a04bde18727&page=${page}&pageSize=${props.pagesize}`
         setloding(true)
